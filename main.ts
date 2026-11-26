@@ -1,8 +1,8 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const status = `Lost sock update: Inside the dog. They're spending $4,000 to get me back. Who's the good boy now?`;
+const status = `Missing sock update: The dog ate me. Vet quoted $4,000. Tell the cashmere I've made it.`;
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR || "/output";
 
-await mkdir(outputDir, { recursive: true });
-await writeFile(join(outputDir, "entry.txt"), `${status}\n`, "utf8");
+mkdirSync(outputDir, { recursive: true });
+writeFileSync(join(outputDir, "entry.txt"), `${status}\n`, "utf8");
